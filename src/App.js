@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Reviews from './components/Reviews';
+import AverageRating from './components/AverageRating';
+import SentimentAnalysis from './components/SentimentAnalysis';
+import WebsiteVisitors from './components/WebsiteVisitors';
+import Panel from './components/Panel';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>              
+        <Panel className="example">Panel</Panel>         
+        <Reviews numReviews={1281} percentage={23+"%"}/>
+        <AverageRating rating="4.6" diff={-0.3}/>
+        <SentimentAnalysis numPos={960} numNeut={122} numNeg={321}/>
+        <WebsiteVisitors numVisitors={821}/>        
+      </main>
     </div>
   );
 }
